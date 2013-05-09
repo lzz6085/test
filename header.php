@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Website Name Here</title>
-<meta charset="GBK">
+<title>Movie Tracker</title>
+<meta charset="UTF-8">
 <!--[if IE]><![endif]-->
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -25,8 +25,8 @@
     	<div id="headerright">
             <div class="menu">
                 <ul>
-                    <li class="active"><a title="" href="#">热门电影</a></li>
-                   <li><a title="" href="#">最近更新</a></li>
+                    <li class="active"><a title="" href="#">鐑棬鐢靛奖</a></li>
+                   <li><a title="" href="#">鏈�杩戞洿鏂�</a></li>
                 </ul>
             </div>
         </div>
