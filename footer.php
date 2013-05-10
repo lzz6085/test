@@ -2,7 +2,7 @@
         <hr />
     </div>
     <div id="footercont" class="clearfix">
-        <p>Your Website Name &copy; 2012</p>
+        <p>Movie Tracker</p>
     </div>
 </div>
 <script type="text/javascript">

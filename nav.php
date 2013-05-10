@@ -14,9 +14,8 @@ foreach( $nav as $n => $arr ) {
 
 foreach( $nav as $n => $arr ) {
 
-	$curr = isset($_REQUEST[$n]) && in_array($_REQUEST[$n], $arr) ? $_REQUEST[$n] : '不限';
-
-        $carr = array_merge(array('不限'), $arr);
+    $carr = array_merge(array('不限'), $arr, array('其他'));
+	$curr = isset($_REQUEST[$n]) && in_array($_REQUEST[$n], $carr) ? $_REQUEST[$n] : '不限';
 	echo "
 	<nav class='nav'> 
 		<ul>
