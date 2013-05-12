@@ -1,13 +1,18 @@
+<?php
+	$title = isset($title) ? $title : '';
+	$description = isset($description) ? $description : '';
+	$keywords = isset($keywords) ? $keywords : 'movie';
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Movie Tracker</title>
+<title><?php echo $title; ?>电影 Movie Tracker</title>
 <meta charset="UTF-8">
 <!--[if IE]><![endif]-->
-<meta name="description" content="">
-<meta name="keywords" content="">
+<meta name="description" content="<?php echo $description; ?>电影 Moive Tarcker 电影速递">
+<meta name="keywords" content="<?php echo $keywords; ?>电影,下载,在线">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="css/style.css?123e1">
+<link rel="stylesheet" href="css/style.css?dafdsfdgs">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 <script src="js/scripts.js"></script>

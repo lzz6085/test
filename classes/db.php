@@ -1,6 +1,14 @@
 <?php
 
-function mysqli_prepared_query($link,$sql,$bindParams = FALSE){
+function mysqli_prepared_query($sql,$l = NULL, $bindParams = FALSE){
+  static $link = NULL;	
+  if(empty($l)) {
+  	$link = mysqli_init();
+	$link->real_connect('127.0.0.1', 'root');
+	mysqli_query($link, 'set names `utf8`');
+  } else {
+  	$link = $l;
+  }
   if($stmt = mysqli_prepare($link,$sql)){
     if ($bindParams){                                                                                                    
       $bindParamsMethod = new ReflectionMethod('mysqli_stmt', 'bind_param');  //allows for call to mysqli_stmt->bind_param using variable argument list       
