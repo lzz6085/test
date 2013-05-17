@@ -4,7 +4,7 @@
 	foreach ($list as $l) {
 		echo "
 			<li>
-				<a title='{$l['title']}'><img alt='{$l['title']}' src='images.php?id={$l['id']}' /><div class='overlay link'></div>{$l['title_show']}</a>
+				<a target='_blank' href='./moive.php?id={$l['id']}' title='{$l['title']}'><img alt='{$l['title']}' src='images.php?id={$l['id']}' /><div class='overlay link'></div>{$l['title_show']}</a>
 			</li>
 			";
 	}

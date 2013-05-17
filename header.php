@@ -6,11 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo $title; ?>电影 Movie Tracker</title>
+<title><?php echo $title; ?> Movie Tracker</title>
 <meta charset="UTF-8">
 <!--[if IE]><![endif]-->
-<meta name="description" content="<?php echo $description; ?>电影 Moive Tarcker 电影速递">
-<meta name="keywords" content="<?php echo $keywords; ?>电影,下载,在线">
+<meta name="description" content="<?php echo $description; ?> 电影 Moive Tarcker 电影速递">
+<meta name="keywords" content="<?php echo $keywords; ?> 电影,下载,在线">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="css/style.css?dafiiis">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -26,7 +26,7 @@
 <div id="fixedtop" class="clearfix">
   
 	<div id="headercont" class="clearfix">
-       <a id="headerleft" title="" href="#">MovieTracker<br/><font color="black">MTer.org</font></a>
+       <a id="headerleft" title="" href="./index.php">MovieTracker<br/><font color="black">MTer.org</font></a>
     	<div id="headerright">
             <div class="menu">
                 <ul>

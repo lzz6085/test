@@ -19,16 +19,4 @@ $max = 20;
 $curr_page = isset($_REQUEST['page']) && $_REQUEST['page'] > 0 ? intval($_REQUEST['page']) : 1;
 $sql = "select id,xml from mt.dm where $where limit ". (($curr_page-1) * $pageFlip) .",$pageFlip";
 $ret = mysqli_prepared_query($sql);
-$list = array();
-foreach ($ret as $r) {
-	$m = array();
-	$json = json_decode($r['xml'], true);
-	$m['title_show'] = $m['title'] = isset($json['alt_title']) && $json['alt_title'] != '' ? $json['alt_title'] : (isset($json['title']) ? $json['title'] : '');
-	$m['id'] = $r['id'];
-	$s = strtr($m['title'], array('('=>'-',':'=>'-','/'=>'-','–=> '-''));
-	if(strpos($s,'-')) {
-		$m['title_show'] = substr($m['title'],0, strpos($s,'-'));
-	}
-	$list[] = $m;
-}
-
+$list = getMovieList($ret);
