@@ -1,5 +1,9 @@
 <?php
 
+$x = '"';
+var_dump(htmlspecialchars($x));
+die;
+
 include './classes/db.php';
 
 $sql = 'select User,Host from mysql.user where  1 = ?';

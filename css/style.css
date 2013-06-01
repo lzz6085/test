@@ -130,7 +130,7 @@ margin: 5px 0 0 0;
 						#fixedtop #headercont #headerright ul li a
 						{
 							float: left;
-							line-height: 80px;
+							line-height: 50px;
 							padding: 0 12px;
 							font-weight: 400;
 							font-size: 16px;
@@ -252,6 +252,11 @@ float: left;
 
 @media screen and (max-width: 868px)
 {
+
+	#fixedtop
+	{
+		height: 135px;
+	}
 	
 	#fixedtop #headercont
 	{

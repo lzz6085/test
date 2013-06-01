@@ -12,7 +12,7 @@
 <meta name="description" content="<?php echo $description; ?> 电影 Moive Tarcker 电影速递">
 <meta name="keywords" content="<?php echo $keywords; ?> 电影,下载,在线">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="css/style.css?dafiiis">
+<link rel="stylesheet" href="css/style.css?dafiiiiiidsads">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 <script src="js/scripts.js"></script>
@@ -26,7 +26,8 @@
 <div id="fixedtop" class="clearfix">
   
 	<div id="headercont" class="clearfix">
-       <a id="headerleft" title="" href="./index.php">MovieTracker<br/><font color="black">MTer.org</font></a>
+	   <a id="headerleft" title="" href="./index.php">MovieTracker<br/><b style="color:black">MTer.org</b></a>
+	   <div id="headercenter" style="font-size: 20px;"><br/><?php echo $title; ?></div>
     	<div id="headerright">
             <div class="menu">
                 <ul>

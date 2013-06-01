@@ -19,7 +19,7 @@ foreach( $nav as $n => $arr ) {
 		$cstr = $c == $curr ? ' class="current"' : '';
 		$p = $params;
 		$p[$n] = "{$n}={$c}";
-		$pstr = implode("&", $p);
+		$pstr = htmlspecialchars(implode("&", $p));
 		echo  "
 			<li $cstr>
 				<a href='?$pstr'>$c</a>

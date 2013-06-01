@@ -6,7 +6,7 @@ function getUrl($cur) {
 	foreach ($req as $k => &$v) {
 		$v = "$k=$v";
 	}
-	return '?' . implode('&', $req);
+	return '?' . htmlspecialchars(implode('&', $req));
 }
 
 function getMovieList($ret)
@@ -17,7 +17,8 @@ function getMovieList($ret)
 		$json = json_decode($r['xml'], true);
 		$m['title_show'] = $m['title'] = isset($json['alt_title']) && $json['alt_title'] != '' ? $json['alt_title'] : (isset($json['title']) ? $json['title'] : '');
 		$m['id'] = $r['id'];
-		$s = strtr($m['title'], array('／'=>'-','.'=>'-','('=>'-',':'=>'-','/'=>'-','–=> '-''));
+		$s = strtr($m['title'], array("'" => ' ', '／'=>'-','.'=>'-','('=>'-',':'=>'-','/'=>'-','–=> '-''));
+		$s = htmlspecialchars($s);
 		if(strpos($s,'-')) {
 			$m['title_show'] = substr($m['title'],0, strpos($s,'-'));
 		}
@@ -60,4 +61,49 @@ function getMovieInfo($id)
 		$str = strtr($str, array('"' => '', "\n" => ' '));
 	}
 	return $m;
+}
+
+
+function convertUrlQuery($query) { 
+	$queryParts = explode('&', $query);
+
+	$params = array();
+	foreach ($queryParts as $param) {
+		$item = explode('=', $param);
+		isset($item[1]) && $params[$item[0]] = $item[1];
+	}
+	return $params;
+}
+
+function getMovieiResource($id)
+{
+	$sql = "select type,url from mt.dyfm where dmid = $id";
+	$ret = mysqli_prepared_query($sql);
+	$m = array();
+	foreach($ret as $row) {
+		$type = $row['type'];
+		$url = htmlspecialchars_decode($row['url']);
+		$p_url = convertUrlQuery($url);
+		$name = isset($p_url['dn']) ? $p_url['dn'] : $url;
+		$name = htmlspecialchars(urldecode($name));
+		$url = htmlspecialchars($url);
+		$show = $url;
+		if (isset($p_url['magnet:?xt'])) {
+			$btid = explode(':', $p_url['magnet:?xt']);
+			isset($btid[2]) && $show = "http://www.x2yun.com/#!u=bt%3A%2F%2F{$btid[2]}%2F0";
+		}
+		$m[$type][] = array('url' => $url, 'name' => $name, 'show' => $show);
+	}
+	return $m;
+}
+
+function echoMovieList($list)
+{
+	foreach ($list as $l) {
+		echo "
+			<li>
+				<a target='_blank' href='./moive.php?id={$l['id']}' title=\"{$l['title']}\"><img alt=\"{$l['title']}\" src='images.php?id={$l['id']}' /><div class='overlay link'></div>{$l['title_show']}</a>
+			</li>
+			";
+	}
 }
