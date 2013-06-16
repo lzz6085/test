@@ -19,7 +19,7 @@ foreach ($m as $t => $s) {
 }
 echo "</ul>";
 
-$randid = rand(1291543, 20513069);
+$randid = rand(1291543, 7513069);
 $sql = "select id,xml from mt.dm where id >= $randid limit 20";
 $ret = mysqli_prepared_query($sql);
 $list = getMovieList($ret);
