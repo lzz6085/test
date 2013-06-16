@@ -14,9 +14,9 @@ foreach($_REQUEST as $k => $r) {
 		$where .= " AND xml like '%$r%'";
 	}
 }
-$pageFlip = 20;
-$max = 20;
+$pageFlip = 40;
+$max = 200;
 $curr_page = isset($_REQUEST['page']) && $_REQUEST['page'] > 0 ? intval($_REQUEST['page']) : 1;
-$sql = "select id,xml from mt.dm where $where limit ". (($curr_page-1) * $pageFlip) .",$pageFlip";
+$sql = "select id,xml from mt.dm where $where order by id desc limit ". (($curr_page-1) * $pageFlip) .",$pageFlip";
 $ret = mysqli_prepared_query($sql);
 $list = getMovieList($ret);
