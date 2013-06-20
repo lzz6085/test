@@ -5,6 +5,9 @@
         <p>Movie Tracker</p>
     </div>
 </div>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?uid=1370733258369661&move=0&amp;btn=r4.gif" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

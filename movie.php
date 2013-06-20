@@ -18,6 +18,20 @@ foreach ($m as $t => $s) {
 	echo "<li>$t : $s</li>";
 }
 echo "</ul>";
+echo '
+<!-- JiaThis Button BEGIN -->
+  <div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+  </div>
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1370733258369661" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+';
 
 $randid = rand(1291543, 7513069);
 $sql = "select id,xml from mt.dm where id >= $randid limit 20";
